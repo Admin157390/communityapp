@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loginPage">
+    <div class="bright-bg"></div>
+    <div class="login-box">
+      <h2>Welcome Back!</h2>
+      <input type="text" id="username" placeholder="Enter Username" />
+      <p id="loginMessage" class="error"></p>
+      <button onclick="login()">Login</button>
+    </div>
+  </div>
+
+  <div id="dashboard" class="hidden">
+    <header>
+      <span id="clock" class="clock"></span>
+      <div class="profile" onclick="logout()">👤 Logout</div>
+    </header>
+
+    <main>
+      <div class="options">
+        <div class="card" onclick="openSection('books')">📚 Books</div>
+        <div class="card" onclick="openSection('tests')">📝 Tests</div>
+        <div class="card" onclick="openSection('entab')">🏫 ENTAB</div>
+        <div class="card" onclick="openSection('community')">💬 Community</div>
+        <div class="card" onclick="openSection('appInfo')">ℹ️ App Info</div>
+        <div class="card" onclick="openSection('timetable')">📅 Timetable</div>
+      </div>
+      <div id="contentSection" class="section hidden">
+        <button class="backBtn" onclick="goBack()">← Back</button>
+        <div id="sectionContent"></div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="calendar">
+        <p>📅 Real-Time Calendar Coming Soon</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #fefcea, #f1daff);
+  min-height: 100vh;
+  color: #333;
+}
+/* Add the full CSS provided earlier... */
