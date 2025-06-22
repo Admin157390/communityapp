@@ -1,51 +1,136 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Community App</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Community App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="loginPage">
-    <div class="bright-bg"></div>
-    <div class="login-box">
-      <h2>Welcome Back!</h2>
-      <input type="text" id="username" placeholder="Enter Username" />
-      <p id="loginMessage" class="error"></p>
-      <button onclick="login()">Login</button>
+
+<div class="topbar">
+  <button onclick="showSection('community')">Community</button>
+  <button onclick="showSection('feedback')">Feedback</button>
+  <button onclick="showSection('books')">Books</button>
+  <button onclick="showSection('testpapers')">Test Papers</button>
+  <button onclick="showSection('bus')">Bus</button>
+  <button onclick="showSection('uniform')">Uniform</button>
+  <button onclick="showSection('entab')">Entab</button>
+  <button onclick="showSection('members')">Members</button>
+</div>
+
+<section id="community" class="active">
+  <div class="card">
+    <h2>Join Our WhatsApp Community</h2>
+    <p><strong>Active Members:</strong> Malhar, Rohan, Ranveer</p>
+    <button class="join-btn" onclick="window.open('https://wa.me/919324961255')">Join Now</button>
+  </div>
+</section>
+
+<section id="feedback">
+  <div class="card">
+    <h2>📝 Feedback</h2>
+    <ul class="feedback">
+      <li>Malhar: "Very useful app!"</li>
+      <li>Krishan: "Helpful for all students."</li>
+      <li>Ranveer: "Great support and features!"</li>
+      <li>Rushikesh: "Everything in one place."</li>
+      <li>Rudransh: "Very organized!"</li>
+      <li>Mithilesh: "User-friendly UI."</li>
+      <li>Soham: "Top-notch support!"</li>
+      <li>Rohan: "Nice work done bro!"</li>
+    </ul>
+  </div>
+</section>
+
+<section id="books">
+  <div class="card">
+    <h2>📚 Subjects</h2>
+    <div class="subjects">
+      <div class="subject-item">Hindi</div>
+      <div class="subject-item">Marathi</div>
+      <div class="subject-item">Maths</div>
+      <div class="subject-item">English</div>
+      <div class="subject-item">Physics</div>
+      <div class="subject-item">Chemistry</div>
+      <div class="subject-item">Biology</div>
+      <div class="subject-item">History</div>
+      <div class="subject-item">Economics</div>
+      <div class="subject-item">NCC</div>
+      <div class="subject-item">Computer</div>
     </div>
   </div>
+</section>
 
-  <div id="dashboard" class="hidden">
-    <header>
-      <span id="clock" class="clock"></span>
-      <div class="profile" onclick="logout()">👤 Logout</div>
-    </header>
-
-    <main>
-      <div class="options">
-        <div class="card" onclick="openSection('books')">📚 Books</div>
-        <div class="card" onclick="openSection('tests')">📝 Tests</div>
-        <div class="card" onclick="openSection('entab')">🏫 ENTAB</div>
-        <div class="card" onclick="openSection('community')">💬 Community</div>
-        <div class="card" onclick="openSection('appInfo')">ℹ️ App Info</div>
-        <div class="card" onclick="openSection('timetable')">📅 Timetable</div>
-      </div>
-      <div id="contentSection" class="section hidden">
-        <button class="backBtn" onclick="goBack()">← Back</button>
-        <div id="sectionContent"></div>
-      </div>
-    </main>
-
-    <footer>
-      <div class="calendar">
-        <p>📅 Real-Time Calendar Coming Soon</p>
-      </div>
-    </footer>
+<section id="testpapers">
+  <div class="card">
+    <h2>📄 Test Papers</h2>
+    <p>Coming soon with downloadable files.</p>
   </div>
+</section>
 
-  <script src="script.js"></script>
+<section id="bus">
+  <div class="card">
+    <h2>🚌 Bus Tracking App</h2>
+    <p>Track your bus with our parent app.</p>
+    <a href="https://play.google.com/store/apps/details?id=com.satcop.satcopparent" target="_blank" class="link-button">Open Bus App</a>
+  </div>
+</section>
+
+<section id="uniform">
+  <div class="card">
+    <h2>👕 Uniform Schedule</h2>
+    <table>
+      <tr><th>Weekday</th><th>Uniform</th></tr>
+      <tr><td>Monday</td><td>School Uniform</td></tr>
+      <tr><td>Tuesday</td><td>House Uniform</td></tr>
+      <tr><td>Wednesday</td><td>MCF/NCC Uniform</td></tr>
+      <tr><td>Thursday</td><td>School Uniform</td></tr>
+      <tr><td>Friday</td><td>School Uniform</td></tr>
+      <tr><td>Saturday</td><td>House Uniform</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="entab">
+  <div class="card">
+    <h2>📱 ENTAB School App</h2>
+    <p><strong>School Code:</strong> <code>EMPROS</code></p>
+    <a href="https://play.google.com/store/apps/details?id=com.entab.learninglab" target="_blank" class="link-button">Open ENTAB App</a>
+  </div>
+</section>
+
+<section id="members">
+  <div class="card">
+    <h2>👥 Community Members</h2>
+    <h3>🔰 Administrator</h3>
+    <p>👑 Kartik</p>
+
+    <h3>🤝 Wise Admin</h3>
+    <p>🧠 Ranveer</p>
+
+    <h3>🌟 Special Active Members</h3>
+    <ul>
+      <li>🔥 Malhar</li>
+      <li>⚡ Rohan</li>
+    </ul>
+
+    <h3>🧑‍🎓 Other Active Members</h3>
+    <ul>
+      <li>✅ Krishan</li>
+      <li>✅ Soham</li>
+      <li>✅ Ansh</li>
+      <li>✅ Rudransh</li>
+      <li>✅ Mithilesh</li>
+    </ul>
+  </div>
+</section>
+
+<a class="whatsapp-float" href="https://wa.me/919324961255" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA Icon">
+  Customer Care
+</a>
+
+<script src="script.js"></script>
 </body>
-</html>
+  </html>
