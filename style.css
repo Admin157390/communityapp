@@ -3,4 +3,144 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f4faff;
 }
-/* CSS trimmed for brevity - identical to prior step */
+
+.topbar {
+  display: flex;
+  overflow-x: auto;
+  background-color: #ffffff;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.topbar button {
+  background: none;
+  border: none;
+  padding: 10px 16px;
+  font-weight: bold;
+  color: #007b7f;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.topbar button:hover {
+  color: #1abc9c;
+}
+
+section {
+  display: none;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+section.active {
+  display: block;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.join-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-float img {
+  width: 20px;
+  margin-right: 8px;
+}
+
+.feedback {
+  list-style: none;
+  padding: 0;
+}
+
+.feedback li {
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  background: #e7f6ff;
+  border-radius: 8px;
+}
+
+.subjects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.subject-item {
+  background-color: #dfefff;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: #0077b6;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+  background-color: #fff;
+}
+
+th {
+  background-color: #007b7f;
+  color: white;
+}
+
+.link-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
