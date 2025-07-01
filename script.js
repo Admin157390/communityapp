@@ -4,20 +4,16 @@ function showSection(id) {
   document.getElementById(id).classList.add('active');
 }
 
-function notAvailable() {
-  alert("❌ This subject is not available yet.");
-}
-
-// Screenshot prevention (best effort)
+// Screenshot Block (best effort for Android)
 document.addEventListener("keydown", function (e) {
   if (e.key === "PrintScreen") {
-    alert("❌ Screenshot is disabled for this app.");
     e.preventDefault();
+    alert("Screenshot is disabled.");
   }
 });
 
 document.addEventListener("keyup", function (e) {
   if (e.key === "PrintScreen") {
-    navigator.clipboard.writeText("");
+    navigator.clipboard.writeText('');
   }
 });
