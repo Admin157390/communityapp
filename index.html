@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>www.Community.in</title>
-  <link rel="stylesheet" href="style.css">
+  <title>My Community App</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body onkeydown="checkKeys(event)">
+<body>
 
 <div class="topbar">
   <button onclick="showSection('community')">Community</button>
@@ -47,19 +47,19 @@
   <div class="card">
     <h2>📚 Subjects</h2>
     <div class="subjects">
-      <div class="https://drive.google.com/file/d/1grONVcxovtksqdo2RRRjzKAHDO0sl3Ie/view?usp=drivesdk">Hindi</div>
-      <div class="https://drive.google.com/file/d/1h5orXcrIWKyRdJHweGnsXApXIWGrjCzS/view?usp=drivesdk">Marathi</div>
-      <div class="subject-item">Maths</div>
-      <div class="subject-item">English</div>
-      <div class="subject-item">Physics</div>
-      <div class="subject-item">Chemistry</div>
-      <div class="subject-item">Biology</div>
-      <div class="subject-item">History</div>
-      <div class="subject-item">Economics</div>
-      <div class="subject-item">Civics</div>
-      <div class="subject-item">Geography</div>
-      <div class="subject-item">NCC</div>
-      <div class="subject-item">Computer</div>
+      <div class="subject-item" onclick="openDrive('Hindi')">Hindi</div>
+      <div class="subject-item" onclick="openDrive('Marathi')">Marathi</div>
+      <div class="subject-item" onclick="openDrive('Maths')">Maths</div>
+      <div class="subject-item" onclick="openDrive('English')">English</div>
+      <div class="subject-item" onclick="openDrive('Physics')">Physics</div>
+      <div class="subject-item" onclick="openDrive('Chemistry')">Chemistry</div>
+      <div class="subject-item" onclick="openDrive('Biology')">Biology</div>
+      <div class="subject-item" onclick="openDrive('History')">History</div>
+      <div class="subject-item" onclick="openDrive('Economics')">Economics</div>
+      <div class="subject-item" onclick="openDrive('Civics')">Civics</div>
+      <div class="subject-item" onclick="openDrive('Geography')">Geography</div>
+      <div class="subject-item" onclick="openDrive('Computer')">Computer</div>
+      <div class="subject-item" onclick="openDrive('NCC')">NCC</div>
     </div>
   </div>
 </section>
@@ -74,6 +74,7 @@
 <section id="bus">
   <div class="card">
     <h2>🚌 Bus Tracking App</h2>
+    <p>Track your bus with our parent app.</p>
     <a href="https://play.google.com/store/apps/details?id=com.satcop.satcopparent" target="_blank" class="link-button">Open Bus App</a>
   </div>
 </section>
@@ -130,7 +131,7 @@
 </section>
 
 <a class="whatsapp-float" href="https://wa.me/919324961255" target="_blank">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA Icon">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA Icon" />
   Customer Care
 </a>
 
