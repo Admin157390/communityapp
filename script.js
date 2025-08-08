@@ -4,7 +4,7 @@ function showSection(id) {
   document.getElementById(id).classList.add('active');
 }
 
-// Screenshot block (best effort)
+// Screenshot block
 document.addEventListener("keydown", function (e) {
   if (e.key === "PrintScreen") {
     e.preventDefault();
