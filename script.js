@@ -1,19 +1,19 @@
-function showSection(id) {
-  const sections = document.querySelectorAll('section');
-  sections.forEach(sec => sec.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+function showSection(id) {  
+  // Hide all sections
+  const sections = document.querySelectorAll('section');  
+  sections.forEach(sec => sec.classList.remove('active'));  
+
+  // Show the selected section
+  document.getElementById(id).classList.add('active');  
+
+  // Close sidebar after selecting
+  closeSidebar();  
+}  
+
+function openSidebar() {  
+  document.getElementById("sidebar").style.width = "250px";  
+}  
+
+function closeSidebar() {  
+  document.getElementById("sidebar").style.width = "0";  
 }
-
-// Screenshot block
-document.addEventListener("keydown", function (e) {
-  if (e.key === "PrintScreen") {
-    e.preventDefault();
-    alert("Screenshot is disabled.");
-  }
-});
-
-document.addEventListener("keyup", function (e) {
-  if (e.key === "PrintScreen") {
-    navigator.clipboard.writeText('');
-  }
-});
