@@ -4,11 +4,61 @@ body {
   background-color: #f4faff;
 }
 
+/* 🔹 Hamburger menu */
+.hamburger {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 20;
+  font-size: 26px;
+  cursor: pointer;
+  background: #007b7f;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+  overflow-x: hidden;
+  transition: 0.3s;
+  z-index: 15;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 12px 20px;
+  display: block;
+  font-weight: bold;
+  color: #007b7f;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background: #f0f0f0;
+}
+
+.closebtn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #007b7f;
+}
+
 .topbar {
   display: flex;
   overflow-x: auto;
   background-color: #ffffff;
   padding: 10px;
+  padding-left: 60px; /* space for hamburger */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -135,12 +185,6 @@ th {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
