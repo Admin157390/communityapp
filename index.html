@@ -8,6 +8,18 @@
 </head>
 <body oncontextmenu="return false">
 
+  <!-- 🔹 Hamburger -->
+  <div class="hamburger" onclick="openSidebar()">☰</div>
+
+  <!-- 🔹 Sidebar Menu -->
+  <div id="sidebar" class="sidebar">
+    <span class="closebtn" onclick="closeSidebar()">×</span>
+    <a href="#" onclick="showSection('teachers')">Teachers Info</a>
+    <a href="#" onclick="showSection('members')">Members Info</a>
+    <a href="#" onclick="showSection('events')">Events</a>
+  </div>
+
+  <!-- 🔹 Topbar -->
   <div class="topbar">
     <button onclick="showSection('community')">Community</button>
     <button onclick="showSection('feedback')">Feedback</button>
@@ -18,10 +30,10 @@
     <button onclick="showSection('entab')">Entab</button>
     <button onclick="showSection('members')">Members</button>
     <button onclick="showSection('call')">Community Call</button>
-    <!-- New Button -->
     <button onclick="showSection('idcard')">ID Card</button>
   </div>
 
+  <!-- 🔹 Sections -->
   <section id="community" class="active">
     <div class="card">
       <h2>Join Our WhatsApp Community</h2>
@@ -46,6 +58,28 @@
     </div>
   </section>
 
+  <section id="teachers">
+    <div class="card">
+      <h2>👩‍🏫 Teachers Information</h2>
+      <table>
+        <tr><th>Name</th><th>Phone Number</th><th>Subject</th></tr>
+        <tr><td>Ankush Kamble</td><td>+91 98509 18797</td><td>Games</td></tr>
+        <tr><td>Anita Khore</td><td>+91 98235 47118</td><td>Games</td></tr>
+        <tr><td>Prajita Nair</td><td>+91 73562 15604</td><td>English</td></tr>
+        <tr><td>Dipmala Patil</td><td>+91 88050 48615</td><td>Biology</td></tr>
+        <tr><td>Niti Tiwari</td><td>+91 72086 75682</td><td>Sanskrit</td></tr>
+        <tr><td>Shital Adagale</td><td>+91 99222 52609</td><td>Hindi</td></tr>
+        <tr><td>Asavari Mungikar</td><td>+91 77983 33776</td><td>Economics</td></tr>
+        <tr><td>Shilpa Sakpal</td><td>+91 84590 21756</td><td>Information Technology</td></tr>
+        <tr><td>Mahima Gamot</td><td>+91 82087 61317</td><td>Physics</td></tr>
+        <tr><td>Priti Tekawade</td><td>No Data Found</td><td>Chemistry</td></tr>
+        <tr><td>Aniruddh Jagdale</td><td>+91 70575 62600</td><td>Mathematics</td></tr>
+        <tr><td>Ariti Baygar</td><td>No Data Found</td><td>History, Geography</td></tr>
+        <tr><td>Tejashri Kadu</td><td>No Data Found</td><td>Marathi</td></tr>
+      </table>
+    </div>
+  </section>
+
   <section id="books">
     <div class="card">
       <h2>📚 Subjects</h2>
@@ -63,6 +97,7 @@
         <a class="subject-item" href="#">Computer</a>
         <a class="subject-item" href="#">Civics</a>
         <a class="subject-item" href="#">Geography</a>
+        <a class="subject-item" href="#">Sanskrit</a>
       </div>
     </div>
   </section>
@@ -139,7 +174,6 @@
     </div>
   </section>
 
-  <!-- New ID Card Section -->
   <section id="idcard">
     <div class="card">
       <h2>🪪 ID Card</h2>
@@ -152,11 +186,19 @@
         <li><strong>Enter OTRN Number:</strong> Enter the OTRN number provided in your ward's diary.</li>
         <li><strong>Fill in Details:</strong> Complete all necessary details in the app.</li>
         <li><strong>Upload Photo:</strong> Upload a photo of your child in regular white uniform with white background. House dress or any other photos are not permitted.</li>
-        <li><strong>Check Details:</strong> Ensure all details are accurate before submitting. Once submitted, the information cannot be edited.class teacher are going to provide the number</li>
+        <li><strong>Check Details:</strong> Ensure all details are accurate before submitting. Once submitted, the information cannot be edited. Class teacher will provide the number.</li>
       </ol>
     </div>
   </section>
 
+  <section id="events">
+    <div class="card">
+      <h2>📅 Events</h2>
+      <p>As soon as possible we will provide you the message in the event option.</p>
+    </div>
+  </section>
+
+  <!-- 🔹 WhatsApp Floating Button -->
   <a class="whatsapp-float" href="https://wa.me/919324961255" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA Icon">
     Customer Care
@@ -164,4 +206,4 @@
 
   <script src="script.js"></script>
 </body>
-          </html>
+</html>
