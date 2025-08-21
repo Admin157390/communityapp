@@ -9,13 +9,14 @@
 <body oncontextmenu="return false">
 
   <!-- 🔹 Hamburger -->
-  <div class="hamburger" onclick="openSidebar()">☰</div>
+  <div id="hamburger" class="hamburger">☰</div>
 
   <!-- 🔹 Sidebar Menu -->
   <div id="sidebar" class="sidebar">
     <span class="closebtn" onclick="closeSidebar()">×</span>
     <a href="#" onclick="showSection('teachers')">Teachers Info</a>
-    <a href="#" onclick="showSection('members')">Members Info</a>
+    <!-- 🔗 Members Info link directly opens Drive file -->
+    <a href="https://drive.google.com/file/d/19_w8BPlMK5eQrgBAMMuT2ar_QJzqYb3G/view?usp=drivesdk" target="_blank">Members Info</a>
     <a href="#" onclick="showSection('events')">Events</a>
   </div>
 
