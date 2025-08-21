@@ -1,19 +1,15 @@
-function showSection(id) {  
-  // Hide all sections
-  const sections = document.querySelectorAll('section');  
-  sections.forEach(sec => sec.classList.remove('active'));  
+// Toggle sidebar
+const hamburger = document.getElementById("hamburger");
+const sidebar = document.getElementById("sidebar");
 
-  // Show the selected section
-  document.getElementById(id).classList.add('active');  
+hamburger.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+});
 
-  // Close sidebar after selecting
-  closeSidebar();  
-}  
+// Toggle Members submenu with animation
+const submenuToggle = document.querySelector(".submenu-toggle");
+const submenu = document.querySelector(".submenu");
 
-function openSidebar() {  
-  document.getElementById("sidebar").style.width = "250px";  
-}  
-
-function closeSidebar() {  
-  document.getElementById("sidebar").style.width = "0";  
-}
+submenuToggle.addEventListener("click", () => {
+  submenu.classList.toggle("open");
+});
