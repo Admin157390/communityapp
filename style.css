@@ -187,4 +187,21 @@ th {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* ✅ Mobile responsive fixes */
+@media (max-width: 768px) {
+  .topbar {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
   }
+
+  .subjects {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .hamburger {
+    font-size: 22px;
+    padding: 6px 10px;
+  }
+}
