@@ -1,202 +1,309 @@
-/* General Reset */
-* {
+/* =========================================================
+   Modern School App UI — CSS ONLY (no HTML/JS changes)
+   - Smooth, consistent animations
+   - Clean topbar with subtle shadow
+   - Card layout, refined tables
+   - Auto-numbered subject items in Books (CSS counters)
+   - Fully responsive (laptop + mobile)
+   ========================================================= */
+
+/* ---------- THEME TOKENS ---------- */
+:root{
+  --bg: #f6f8fc;                 /* page background */
+  --card: #ffffff;               /* card background */
+  --text: #1f2937;               /* main text */
+  --muted: #6b7280;              /* secondary text */
+  --brand: #0a84ff;              /* primary brand blue */
+  --brand-600:#066ad6;
+  --brand-700:#0559b4;
+  --ring: rgba(10,132,255,.25);  /* focus ring */
+  --border: #e5e7eb;
+  --shadow: 0 8px 24px rgba(2,6,23,.06);
+  --radius: 14px;
+  --btn-radius: 10px;
+  --trans: 220ms cubic-bezier(.22,.61,.36,1);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; }
+}
+
+/* ---------- BASE / RESET ---------- */
+*{ box-sizing: border-box; }
+html,body{ height: 100%; }
+body{
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 90% -10%, rgba(10,132,255,.08), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(10,132,255,.06), transparent 60%),
+    var(--bg);
+  line-height: 1.55;
+  -webkit-tap-highlight-color: transparent;
 }
 
-body {
-  background: #f4f6f9;
-  color: #333;
-  line-height: 1.6;
-  padding-top: 60px;
+/* ---------- TOPBAR ---------- */
+.topbar{
+  position: sticky; top: 0; z-index: 1000;
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px;
+  background: rgba(255,255,255,.86);
+  backdrop-filter: saturate(1.2) blur(8px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 18px rgba(2,6,23,.04);
+  overflow-x: auto; white-space: nowrap;
+  scroll-behavior: smooth;
 }
+.topbar::-webkit-scrollbar{ height: 8px; }
+.topbar::-webkit-scrollbar-thumb{ background: #d1d5db; border-radius: 99px; }
+.topbar::-webkit-scrollbar-track{ background: transparent; }
 
-/* 🔹 Topbar */
-.topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #1976d2;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 10px;
-  z-index: 1000;
-}
-
-.topbar button {
-  background: #fff;
-  border: none;
-  margin: 5px;
-  padding: 10px 15px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: 0.3s;
-}
-
-.topbar button:hover {
-  background: #e3f2fd;
-  color: #1976d2;
-  font-weight: bold;
-}
-
-/* 🔹 Hamburger */
-.hamburger {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  font-size: 24px;
-  cursor: pointer;
-  color: white;
-  z-index: 1100;
-}
-
-/* 🔹 Sidebar */
-.sidebar {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1200;
-  top: 0;
-  left: 0;
-  background: #263238;
-  overflow-x: hidden;
-  transition: 0.4s;
-  padding-top: 60px;
-}
-
-.sidebar a {
-  padding: 12px 20px;
-  text-decoration: none;
-  font-size: 16px;
+/* Buttons + link button in topbar */
+.topbar button,
+.topbar .topbar-link,
+.topbar a button{
+  appearance: none;
+  border: 0;
+  background: var(--brand);
   color: #fff;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidebar a:hover {
-  background: #1976d2;
-}
-
-.sidebar .closebtn {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 30px;
+  padding: 10px 14px;
+  border-radius: var(--btn-radius);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  box-shadow: 0 6px 14px rgba(10,132,255,.18);
+  transition: transform var(--trans), box-shadow var(--trans), background var(--trans), opacity var(--trans);
   cursor: pointer;
-  color: white;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.topbar button:hover,
+.topbar .topbar-link:hover,
+.topbar a button:hover{
+  transform: translateY(-1px);
+  background: var(--brand-600);
+  box-shadow: 0 8px 18px rgba(10,132,255,.24);
+}
+.topbar button:active,
+.topbar a button:active{ transform: translateY(0); }
+.topbar button:focus-visible,
+.topbar a button:focus-visible{
+  outline: 0;
+  box-shadow: 0 0 0 4px var(--ring), 0 8px 18px rgba(10,132,255,.24);
 }
 
-/* 🔹 Sections */
-section {
-  display: none;
-  padding: 20px;
+/* ---------- SECTIONS / TRANSITIONS ---------- */
+section{ display: none; padding: clamp(16px, 2.4vw, 28px); }
+section.active{ display: block; }
+section.active .card{
+  animation: sectionIn 520ms cubic-bezier(.22,.61,.36,1) both;
+}
+@keyframes sectionIn{
+  from{ opacity: 0; transform: translateY(10px) scale(.995); }
+  to{ opacity: 1; transform: translateY(0) scale(1); }
 }
 
-section.active {
-  display: block;
+/* ---------- CARD ---------- */
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(18px, 2.2vw, 24px);
+  max-width: 1100px;
+  margin: 14px auto;
+  transition: transform var(--trans), box-shadow var(--trans), border-color var(--trans);
+}
+.card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(2,6,23,.08);
+  border-color: #dde2ea;
+}
+.card h2{
+  margin: 0 0 10px;
+  font-size: clamp(20px, 2.2vw, 26px);
+}
+.card p{ color: var(--muted); margin: 8px 0 0; }
+
+/* ---------- GENERIC BUTTONS (inside cards) ---------- */
+.join-btn,
+.link-button,
+.card button{
+  appearance: none;
+  border: 0;
+  background: var(--brand);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+  box-shadow: 0 8px 18px rgba(10,132,255,.18);
+  transition: transform var(--trans), background var(--trans), box-shadow var(--trans);
+  cursor: pointer;
+}
+.join-btn:hover,
+.link-button:hover,
+.card button:hover{
+  background: var(--brand-600);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(10,132,255,.24);
+}
+.join-btn:active,
+.link-button:active,
+.card button:active{ transform: translateY(0); }
+.join-btn:focus-visible,
+.link-button:focus-visible{
+  outline: 0; box-shadow: 0 0 0 4px var(--ring), 0 8px 18px rgba(10,132,255,.24);
 }
 
-.card {
-  background: #fff;
-  padding: 20px;
-  margin: 15px auto;
-  border-radius: 10px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  max-width: 900px;
-}
-
-.card h2 {
-  color: #1976d2;
-  margin-bottom: 15px;
-}
-
-.card p, .card li {
-  font-size: 15px;
-}
-
-/* 🔹 Tables */
-table {
+/* ---------- TABLES (Teachers, Uniform etc.) ---------- */
+table{
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
+  margin-top: 12px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px var(--border);
 }
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 10px;
+thead th{
+  background: #f3f6fb;
+  color: #0f172a;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+th, td{
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
   text-align: left;
+  font-size: 15px;
 }
-
-th {
-  background: #1976d2;
-  color: white;
+tr:last-child td{ border-bottom: 0; }
+tbody tr{
+  background: #fff;
+  transition: background var(--trans);
 }
+tbody tr:hover{ background: #f9fbff; }
 
-/* 🔹 Subjects */
-.subjects {
+/* ---------- SUBJECTS GRID (Books) ----------
+   Auto-numbered, consistent animation, card-like links
+---------------------------------------------------- */
+.subjects{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+  counter-reset: subj;
 }
-
-.subject-item {
-  background: #1976d2;
-  color: white;
-  padding: 12px;
-  border-radius: 6px;
-  text-align: center;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.subject-item:hover {
-  background: #1565c0;
-}
-
-/* 🔹 Buttons */
-.join-btn, .link-button {
-  display: inline-block;
-  padding: 10px 18px;
-  background: #1976d2;
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: 0.3s;
-  margin-top: 10px;
-}
-
-.join-btn:hover, .link-button:hover {
-  background: #1565c0;
-}
-
-/* 🔹 WhatsApp Floating Button */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25d366;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 50px;
+.subject-item{
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  padding: 14px 16px 14px 52px; /* room for badge */
+  background: #ffffff;
+  color: #0f172a;
   text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform var(--trans), box-shadow var(--trans), border-color var(--trans), background var(--trans);
+}
+.subject-item::before{
+  /* Number badge (auto) */
+  counter-increment: subj;
+  content: counter(subj);
+  position: absolute;
+  left: 12px;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 800;
   font-size: 14px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-  transition: 0.3s;
+  box-shadow: 0 6px 14px rgba(10,132,255,.22);
+}
+.subject-item:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(2,6,23,.08);
+  border-color: #d9e2f2;
+  background: #fdfefe;
 }
 
-.whatsapp-float img {
-  width: 25px;
-  height: 25px;
+/* Make disabled/placeholder links look muted (for those with href="#") */
+.subject-item[href="#"]{
+  color: #9aa3af;
+  background: #fafbfc;
+  border-style: dashed;
+}
+.subject-item[href="#"]:hover{
+  transform: none; box-shadow: var(--shadow);
 }
 
-.whatsapp-float:hover {
-  background: #1ebd5a;
+/* ---------- WHATSAPP FLOAT BUTTON ---------- */
+.whatsapp-float{
+  position: fixed;
+  bottom: 20px; right: 20px;
+  background: #25d366;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 999px;
+  display: inline-flex; align-items: center; gap: 8px;
+  text-decoration: none; font-weight: 800;
+  box-shadow: 0 12px 24px rgba(37,211,102,.25);
+  animation: wBounce 2.4s ease-in-out infinite;
+}
+.whatsapp-float img{ width: 22px; height: 22px; }
+@keyframes wBounce{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-3px); }
+}
+
+/* ---------- UTILITIES ---------- */
+code{
+  background: #f1f5f9; border: 1px solid #e2e8f0;
+  padding: 2px 6px; border-radius: 8px; font-weight: 700;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px){
+  .card{ margin: 12px; }
+  .subjects{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px){
+  .topbar{ gap: 8px; padding: 10px; }
+  .topbar button,
+  .topbar .topbar-link,
+  .topbar a button{ padding: 8px 12px; font-size: 13px; border-radius: 9px; }
+  .card{ padding: 16px; border-radius: 12px; }
+  .subjects{ grid-template-columns: 1fr; gap: 10px; }
+  .subject-item{ padding-left: 50px; }
+}
+
+/* Optional dark mode (auto if OS uses dark) */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: #0b1220;
+    --card: #0f172a;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --border: #1f2937;
+    --shadow: 0 10px 24px rgba(0,0,0,.35);
+    --ring: rgba(14,165,233,.35);
+  }
+  .topbar{ background: rgba(15,23,42,.66); border-color: #1f2937; }
+  .topbar button,
+  .topbar .topbar-link,
+  .topbar a button{ box-shadow: 0 6px 14px rgba(10,132,255,.32); }
+  table{ box-shadow: inset 0 0 0 1px var(--border); }
+  tbody tr{ background: #0f172a; }
+  tbody tr:hover{ background: #0b1220; }
+  .subject-item{ background: #0f172a; }
+  .subject-item[href="#"]{ background: #0b1220; color: #64748b; }
 }
