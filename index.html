@@ -8,18 +8,7 @@
 </head>
 <body oncontextmenu="return false">
 
-  <!-- 🔹 Hamburger -->
-  <div class="hamburger" onclick="openSidebar()">☰</div>
-
-  <!-- 🔹 Sidebar Menu -->
-  <div id="sidebar" class="sidebar">
-    <span class="closebtn" onclick="closeSidebar()">×</span>
-    <a href="#" onclick="showSection('teachers')">Teachers Info</a>
-    <a href="https://drive.google.com/file/d/19_w8BPlMK5eQrgBAMMuT2ar_QJzqYb3G/view?usp=drivesdk" target="_blank">Members Info</a>
-    <a href="#" onclick="showSection('events')">Events</a>
-  </div>
-
-  <!-- 🔹 Topbar -->
+  <!-- 🔹 Topbar with ALL options (includes items that were in the old sidebar) -->
   <div class="topbar">
     <button onclick="showSection('community')">Community</button>
     <button onclick="showSection('feedback')">Feedback</button>
@@ -31,6 +20,9 @@
     <button onclick="showSection('members')">Members</button>
     <button onclick="showSection('call')">Community Call</button>
     <button onclick="showSection('idcard')">ID Card</button>
+    <button onclick="showSection('teachers')">Teachers Info</button>
+    <a class="topbar-link" href="https://drive.google.com/file/d/19_w8BPlMK5eQrgBAMMuT2ar_QJzqYb3G/view?usp=drivesdk" target="_blank">Members Info</a>
+    <button onclick="showSection('events')">Events</button>
   </div>
 
   <!-- 🔹 Sections -->
@@ -206,4 +198,4 @@
 
   <script src="script.js"></script>
 </body>
-              </html>
+        </html>
