@@ -1,26 +1,15 @@
-// Toggle the hamburger menu
-function toggleMenu() {
-  document.getElementById("menu").classList.toggle("active");
+// Show/Hide sections without changing any content
+function showSection(sectionId) {
+  document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+  const target = document.getElementById(sectionId);
+  if (target) {
+    target.classList.add("active");
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
 }
 
-// Handle menu navigation
-function showSection(section) {
-  // Special case: if user clicks Members Information → open Google Drive link
-  if (section === 'members') {
-    window.open("https://drive.google.com/file/d/19_w8BPlMK5eQrgBAMMuT2ar_QJzqYb3G/view?usp=drivesdk", "_blank");
-    return;
-  }
-
-  // Hide all sections
-  const sections = document.querySelectorAll("main section");
-  sections.forEach(sec => sec.style.display = "none");
-
-  // Show selected section
-  const selected = document.getElementById(section);
-  if (selected) {
-    selected.style.display = "block";
-  }
-
-  // Close menu after click
-  document.getElementById("menu").classList.remove("active");
-}
+// Keep the first visible section (Community already has class="active" in HTML)
+document.addEventListener("DOMContentLoaded", () => {
+  const active = document.querySelector("section.active") || document.querySelector("section");
+  if (active) active.classList.add("active");
+});
