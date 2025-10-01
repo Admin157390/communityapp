@@ -6,9 +6,9 @@
   <title>My Community App</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body oncontextmenu="return false">
+<body oncontextmenu="return false" class="diwali-ui">
 
-  <!-- 🔹 Topbar with ALL options (includes items that were in the old sidebar) -->
+  <!-- 🔹 Topbar -->
   <div class="topbar">
     <button onclick="showSection('community')">Community</button>
     <button onclick="showSection('feedback')">Feedback</button>
@@ -23,7 +23,7 @@
     <button onclick="showSection('teachers')">Teachers Info</button>
     <a class="topbar-link" href="https://drive.google.com/file/d/19_w8BPlMK5eQrgBAMMuT2ar_QJzqYb3G/view?usp=drivesdk" target="_blank">Members Info</a>
     <button onclick="showSection('events')">Events</button>
-    <button onclick="showSection('movies')">Movies</button> <!-- ✅ NEW OPTION -->
+    <button onclick="showSection('movies')">Movies</button>
   </div>
 
   <!-- 🔹 Sections -->
@@ -64,7 +64,7 @@
         <tr><td>Shital Adagale</td><td>+91 99222 52609</td><td>Hindi</td></tr>
         <tr><td>Asavari Mungikar</td><td>+91 77983 33776</td><td>Economics</td></tr>
         <tr><td>Shilpa Sakpal</td><td>+91 84590 21756</td><td>Information Technology</td></tr>
-        <tr><td>suresh pendey</td><td>No data found</td></td><td>Physics</td></tr>
+        <tr><td>suresh pendey</td><td>No data found</td><td>Physics</td></tr>
         <tr><td>Priti Tekawade</td><td>No Data Found</td><td>Chemistry</td></tr>
         <tr><td>Aniruddh Jagdale</td><td>+91 70575 62600</td><td>Mathematics</td></tr>
         <tr><td>Ariti Baygar</td><td>No Data Found</td><td>History, Geography</td></tr>
@@ -105,7 +105,6 @@
         <a class="subject-item" href="no data available" target="_blank">English</a>
         <a class="subject-item" href="No data available" target="_blank">Hindi</a>
         <a class="subject-item" href="No data Available" target="_blank">marathi</a>
-        
       </div>
       <p>📥 Tap on a subject to view or download the test paper.</p>
     </div>
@@ -187,8 +186,8 @@
       <ol>
         <li><strong>Enter OTRN Number:</strong> Enter the OTRN number provided in your ward's diary.</li>
         <li><strong>Fill in Details:</strong> Complete all necessary details in the app.</li>
-        <li><strong>Upload Photo:</strong> Upload a photo of your child in regular white uniform with white background. House dress or any other photos are not permitted.</li>
-        <li><strong>Check Details:</strong> Ensure all details are accurate before submitting. Once submitted, the information cannot be edited. Class teacher will provide the number.</li>
+        <li><strong>Upload Photo:</strong> Upload a photo of your child in regular white uniform with white background.</li>
+        <li><strong>Check Details:</strong> Ensure all details are accurate before submitting. Once submitted, info cannot be edited.</li>
       </ol>
     </div>
   </section>
@@ -200,7 +199,6 @@
     </div>
   </section>
 
-  <!-- ✅ NEW MOVIES SECTION -->
   <section id="movies">
     <div class="card">
       <h2>🎬 Movies</h2>
@@ -214,7 +212,6 @@
       </div>
     </div>
   </section>
-  <!-- ✅ END MOVIES -->
 
   <!-- 🔹 WhatsApp Floating Button -->
   <a class="whatsapp-float" href="https://wa.me/919324961255" target="_blank">
@@ -222,6 +219,14 @@
     Customer Care
   </a>
 
+  <!-- 🔹 Diwali Background Music -->
+  <audio id="diwali-music" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- 🔹 Music Toggle Button -->
+  <button id="music-btn" class="music-button">🔊 Play Music</button>
+
   <script src="script.js"></script>
 </body>
-</html>
+          </html>
