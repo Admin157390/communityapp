@@ -1,15 +1,54 @@
-// Show/Hide sections without changing any content
+// 🔹 Function to show and hide sections
 function showSection(sectionId) {
-  document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+  // Remove "active" from all sections
+  document.querySelectorAll("section").forEach(sec => {
+    sec.classList.remove("active");
+  });
+
+  // Add "active" to selected section
   const target = document.getElementById(sectionId);
   if (target) {
     target.classList.add("active");
-    window.scrollTo({ top: 0, behavior: 'instant' });
   }
 }
 
-// Keep the first visible section (Community already has class="active" in HTML)
+// 🔹 Music Control
 document.addEventListener("DOMContentLoaded", () => {
-  const active = document.querySelector("section.active") || document.querySelector("section");
-  if (active) active.classList.add("active");
+  const audio = document.getElementById("diwali-music");
+  const btn = document.getElementById("music-btn");
+
+  if (!audio) return;
+
+  audio.volume = 0.7;
+
+  // Try autoplay
+  audio.play().catch(() => {
+    console.log("Autoplay blocked - waiting for tap");
+  });
+
+  // Enable after first user interaction
+  function startMusic() {
+    if (audio.paused) {
+      audio.play().catch(err => console.log("Music start error:", err));
+    }
+    document.removeEventListener("click", startMusic);
+    document.removeEventListener("touchstart", startMusic);
+  }
+
+  document.addEventListener("click", startMusic);
+  document.addEventListener("touchstart", startMusic);
+
+  // 🎵Button toggle
+  if (btn) {
+    btn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play().then(() => {
+          btn.textContent = "🔇 Stop Music";
+        }).catch(err => console.log(err));
+      } else {
+        audio.pause();
+        btn.textContent = "🔊 Play Music";
+      }
+    });
+  }
 });
