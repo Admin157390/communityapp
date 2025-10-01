@@ -1,233 +1,227 @@
-<!DOCTYPE html>          
-<html lang="en">          
-<head>          
-  <meta charset="UTF-8" />          
-  <meta name="viewport" content="width=device-width, initial-scale=1" />          
-  <title>My Community App</title>          
-  <link rel="stylesheet" href="style.css">          
-</head>          
-<body oncontextmenu="return false">          
-          
-  <!-- 🔹 Topbar with ALL options (includes items that were in the old sidebar) -->          
-  <div class="topbar">          
-    <button onclick="showSection('community')">Community</button>          
-    <button onclick="showSection('feedback')">Feedback</button>          
-    <button onclick="showSection('books')">Books</button>          
-    <button onclick="showSection('testpapers')">Test Papers</button>          
-    <button onclick="showSection('bus')">Bus</button>          
-    <button onclick="showSection('uniform')">Uniform</button>          
-    <button onclick="showSection('entab')">Entab</button>          
-    <button onclick="showSection('members')">Members</button>          
-    <button onclick="showSection('call')">Community Call</button>          
-    <button onclick="showSection('idcard')">ID Card</button>          
-    <button onclick="showSection('teachers')">Teachers Info</button>          
-    <a class="topbar-link" href="https://drive.google.com/file/d/19_w8BPlMK5eQrgBAMMuT2ar_QJzqYb3G/view?usp=drivesdk" target="_blank">Members Info</a>          
-    <button onclick="showSection('events')">Events</button>          
-    <button onclick="showSection('movies')">Movies</button> <!-- ✅ NEW OPTION -->          
-  </div>          
-          
-  <!-- 🔹 Sections -->          
-  <section id="community" class="active">          
-    <div class="card">          
-      <h2>Join Our WhatsApp Community</h2>          
-      <p><strong>Active Members:</strong> Malhar, Rohan, Ranveer</p>          
-      <button class="join-btn" onclick="window.open('https://wa.me/919324961255','_blank')">Join Now</button>          
-    </div>          
-  </section>          
-          
-  <section id="feedback">          
-    <div class="card">          
-      <h2>📝 Feedback</h2>          
-      <ul class="feedback">          
-        <li>Malhar: "Very useful app!"</li>          
-        <li>ranveer: "Helpful for all students."</li>          
-        <li>Ranveer: "Great support and features!"</li>          
-        <li>Rushikesh: "Everything in one place."</li>          
-        <li>Rudransh: "Very organized!"</li>          
-        <li>Mithilesh: "User-friendly UI."</li>          
-        <li>Soham: "Top-notch support!"</li>          
-        <li>Rohan: "Nice work done bro!"</li>          
-      </ul>          
-    </div>          
-  </section>          
-          
-  <section id="teachers">          
-    <div class="card">          
-      <h2>👩‍🏫 Teachers Information</h2>          
-      <table>          
-        <tr><th>Name</th><th>Phone Number</th><th>Subject</th></tr>          
-        <tr><td>Ankush Kamble</td><td>+91 98509 18797</td><td>Games</td></tr>          
-        <tr><td>Anita Khore</td><td>+91 98235 47118</td><td>Games</td></tr>          
-        <tr><td>Prajita Nair</td><td>+91 73562 15604</td><td>English</td></tr>          
-        <tr><td>Dipmala Patil</td><td>+91 88050 48615</td><td>Biology</td></tr>          
-        <tr><td>Niti Tiwari</td><td>+91 72086 75682</td><td>Sanskrit</td></tr>          
-        <tr><td>Shital Adagale</td><td>+91 99222 52609</td><td>Hindi</td></tr>          
-        <tr><td>Asavari Mungikar</td><td>+91 77983 33776</td><td>Economics</td></tr>          
-        <tr><td>Shilpa Sakpal</td><td>+91 84590 21756</td><td>Information Technology</td></tr>          
-        <tr><td>suresh pendey</td><td>No data found</td></td><td>Physics</td></tr>          
-        <tr><td>Priti Tekawade</td><td>No Data Found</td><td>Chemistry</td></tr>          
-        <tr><td>Aniruddh Jagdale</td><td>+91 70575 62600</td><td>Mathematics</td></tr>          
-        <tr><td>Ariti Baygar</td><td>No Data Found</td><td>History, Geography</td></tr>          
-        <tr><td>Tejashri Kadu</td><td>No Data Found</td><td>Marathi</td></tr>          
-      </table>          
-    </div>          
-  </section>          
-          
-  <section id="books">          
-    <div class="card">          
-      <h2>📚 Subjects</h2>          
-      <div class="subjects">          
-        <a class="subject-item" href="https://drive.google.com/file/d/1grONVcxovtksqdo2RRRjzKAHDO0sl3Ie/view" target="_blank">Hindi</a>          
-        <a class="subject-item" href="https://drive.google.com/file/d/1gz9p_dSL75CvSFmeHnOIinqh8Z6JXjFb/view" target="_blank">Marathi</a>          
-        <a class="subject-item" href="https://drive.google.com/file/d/1iREp9B_qQO2ZFSwEgJesXKf47msOF8X4/view" target="_blank">Maths</a>          
-        <a class="subject-item" href="#">English</a>          
-        <a class="subject-item" href="https://drive.google.com/file/d/1ib5mqI-ccFSxkWwmYzrqPb1qLMiYrYra/view" target="_blank">Physics</a>          
-        <a class="subject-item" href="#">Chemistry</a>          
-        <a class="subject-item" href="https://drive.google.com/file/d/1iRO32BjNMMSWpVog-zeNvhJb_huLWyPN/view" target="_blank">Biology</a>          
-        <a class="subject-item" href="#">History</a>          
-        <a class="subject-item" href="https://drive.google.com/file/d/1iRaTKlrHw7LyQB-z5u0AxN8VooYZYBpp/view" target="_blank">Economics</a>          
-        <a class="subject-item" href="#">NCC</a>          
-        <a class="subject-item" href="#">Computer</a>          
-        <a class="subject-item" href="#">Civics</a>          
-        <a class="subject-item" href="#">Geography</a>          
-        <a class="subject-item" href="#">Sanskrit</a>          
-      </div>          
-    </div>          
-  </section>          
-          
-  <section id="testpapers">          
-    <div class="card">          
-      <h2>📄 Test Papers</h2>          
-      <div class="subjects">          
-        <a class="subject-item" href="https://drive.google.com/file/d/1i7Ekw1LV-umrrfbMWtBFVusW297g3eH2/view" target="_blank">Science</a>          
-        <a class="subject-item" href="https://drive.google.com/file/d/1i44EZ2boyz3OIJU5rFyI_0b6U7ILQo_z/view" target="_blank">SST</a>          
-        <a class="subject-item" href="https://drive.google.com/file/d/1i3RW_pKBjYinCcpkjOGNoWk2Shs2nt5f/view" target="_blank">Maths</a>          
-        <a class="subject-item" href="no data available" target="_blank">English</a>          
-        <a class="subject-item" href="No data available" target="_blank">Hindi</a>          
-        <a class="subject-item" href="No data Available" target="_blank">marathi</a>          
-                  
-      </div>          
-      <p>📥 Tap on a subject to view or download the test paper.</p>          
-    </div>          
-  </section>          
-          
-  <section id="bus">          
-    <div class="card">          
-      <h2>🚌 Bus Tracking App</h2>          
-      <p>Track your bus with our parent app.</p>          
-      <a href="https://play.google.com/store/apps/details?id=com.satcop.satcopparent" target="_blank" class="link-button">Open Bus App</a>          
-    </div>          
-  </section>          
-          
-  <section id="uniform">          
-    <div class="card">          
-      <h2>👕 Uniform Schedule</h2>          
-      <table>          
-        <tr><th>Weekday</th><th>Uniform</th></tr>          
-        <tr><td>Monday</td><td>School Uniform</td></tr>          
-        <tr><td>Tuesday</td><td>House Uniform</td></tr>          
-        <tr><td>Wednesday</td><td>MCF/NCC Uniform</td></tr>          
-        <tr><td>Thursday</td><td>School Uniform</td></tr>          
-        <tr><td>Friday</td><td>School Uniform</td></tr>          
-        <tr><td>Saturday</td><td>House Uniform</td></tr>          
-      </table>          
-    </div>          
-  </section>          
-          
-  <section id="entab">          
-    <div class="card">          
-      <h2>📱 ENTAB School App</h2>          
-      <p><strong>School Code:</strong> <code>EMPROS</code></p>          
-      <a href="https://play.google.com/store/apps/details?id=com.entab.learninglab" target="_blank" class="link-button">Open ENTAB App</a>          
-    </div>          
-  </section>          
-          
-  <section id="members">          
-    <div class="card">          
-      <h2>👥 Community Members</h2>          
-      <ul>          
-        <li>👑 Kartik</li>          
-        <li>🔥 Malhar</li>          
-        <li>⚡ Rohan</li>          
-        <li>✅ ranveer</li>          
-        <li>✅ Soham</li>          
-        <li>✅ Ansh</li>          
-        <li>✅ Rudransh</li>          
-        <li>✅ Mithilesh</li>          
-        <li>✅ Rishikesh </li>          
-        <li>✅ Atharva </li>          
-        <li>✅ Chinmay</li>          
-        <li>✅ parth </li>          
-        <li>✅ Amrit</li>          
-        <li>✅ kunal </li>          
-      </ul>          
-    </div>          
-  </section>          
-          
-  <section id="call">          
-    <div class="card">          
-      <h2>📞 Group Call</h2>          
-      <p>Start a video/audio group call. No login required.</p>          
-      <iframe          
-        src="https://meet.jit.si/CommunityGroup123"          
-        allow="camera; microphone; fullscreen; display-capture"          
-        style="width: 100%; height: 500px; border: 0; border-radius: 10px;">          
-      </iframe>          
-    </div>          
-  </section>          
-          
-  <section id="idcard">          
-    <div class="card">          
-      <h2>🪪 ID Card</h2>          
-      <p><strong>Note:</strong> This will only work in a limited time because this website has some time limits.</p>          
-      <p>          
-        <a href="https://kart-studio.vercel.app/" target="_blank" class="link-button">Open Dedicated App</a>          
-      </p>          
-      <h3>Steps to Apply 👇</h3>          
-      <ol>          
-        <li><strong>Enter OTRN Number:</strong> Enter the OTRN number provided in your ward's diary.</li>          
-        <li><strong>Fill in Details:</strong> Complete all necessary details in the app.</li>          
-        <li><strong>Upload Photo:</strong> Upload a photo of your child in regular white uniform with white background. House dress or any other photos are not permitted.</li>          
-        <li><strong>Check Details:</strong> Ensure all details are accurate before submitting. Once submitted, the information cannot be edited. Class teacher will provide the number.</li>          
-      </ol>          
-    </div>          
-  </section>          
-          
-  <section id="events">          
-    <div class="card">          
-      <h2>📅 Events</h2>          
-      <p>Hindi Diwas on 15/sep/2025 coming soon</p>          
-    </div>          
-  </section>          
-          
-  <!-- ✅ NEW MOVIES SECTION -->          
-  <section id="movies">          
-    <div class="card">          
-      <h2>🎬 Movies</h2>          
-      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">          
-        <iframe src="https://geo.dailymotion.com/player.html?video=x9ohtoq"          
-          style="width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border:none;"          
-          allowfullscreen          
-          title="Dailymotion Video Player"          
-          allow="web-share">          
-        </iframe>          
-      </div>          
-    </div>          
-  </section>          
-  <!-- ✅ END MOVIES -->          
-          
-  <!-- 🔹 WhatsApp Floating Button -->          
-  <a class="whatsapp-float" href="https://wa.me/919324961255" target="_blank">          
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA Icon">          
-    Customer Care          
-  </a>          
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Community App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body oncontextmenu="return false">
 
-  <!-- 🎆 Added Diwali Crackers & Welcome -->
-  <div id="diwali-overlay">
-    <h1 class="diwali-text">✨ Happy Diwali ✨</h1>
-    <canvas id="fireworks"></canvas>
+  <!-- 🔹 Topbar with ALL options (includes items that were in the old sidebar) -->
+  <div class="topbar">
+    <button onclick="showSection('community')">Community</button>
+    <button onclick="showSection('feedback')">Feedback</button>
+    <button onclick="showSection('books')">Books</button>
+    <button onclick="showSection('testpapers')">Test Papers</button>
+    <button onclick="showSection('bus')">Bus</button>
+    <button onclick="showSection('uniform')">Uniform</button>
+    <button onclick="showSection('entab')">Entab</button>
+    <button onclick="showSection('members')">Members</button>
+    <button onclick="showSection('call')">Community Call</button>
+    <button onclick="showSection('idcard')">ID Card</button>
+    <button onclick="showSection('teachers')">Teachers Info</button>
+    <a class="topbar-link" href="https://drive.google.com/file/d/19_w8BPlMK5eQrgBAMMuT2ar_QJzqYb3G/view?usp=drivesdk" target="_blank">Members Info</a>
+    <button onclick="showSection('events')">Events</button>
+    <button onclick="showSection('movies')">Movies</button> <!-- ✅ NEW OPTION -->
   </div>
-          
-  <script src="script.js"></script>          
-</body>          
-  </html>
+
+  <!-- 🔹 Sections -->
+  <section id="community" class="active">
+    <div class="card">
+      <h2>Join Our WhatsApp Community</h2>
+      <p><strong>Active Members:</strong> Malhar, Rohan, Ranveer</p>
+      <button class="join-btn" onclick="window.open('https://wa.me/919324961255','_blank')">Join Now</button>
+    </div>
+  </section>
+
+  <section id="feedback">
+    <div class="card">
+      <h2>📝 Feedback</h2>
+      <ul class="feedback">
+        <li>Malhar: "Very useful app!"</li>
+        <li>ranveer: "Helpful for all students."</li>
+        <li>Ranveer: "Great support and features!"</li>
+        <li>Rushikesh: "Everything in one place."</li>
+        <li>Rudransh: "Very organized!"</li>
+        <li>Mithilesh: "User-friendly UI."</li>
+        <li>Soham: "Top-notch support!"</li>
+        <li>Rohan: "Nice work done bro!"</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="teachers">
+    <div class="card">
+      <h2>👩‍🏫 Teachers Information</h2>
+      <table>
+        <tr><th>Name</th><th>Phone Number</th><th>Subject</th></tr>
+        <tr><td>Ankush Kamble</td><td>+91 98509 18797</td><td>Games</td></tr>
+        <tr><td>Anita Khore</td><td>+91 98235 47118</td><td>Games</td></tr>
+        <tr><td>Prajita Nair</td><td>+91 73562 15604</td><td>English</td></tr>
+        <tr><td>Dipmala Patil</td><td>+91 88050 48615</td><td>Biology</td></tr>
+        <tr><td>Niti Tiwari</td><td>+91 72086 75682</td><td>Sanskrit</td></tr>
+        <tr><td>Shital Adagale</td><td>+91 99222 52609</td><td>Hindi</td></tr>
+        <tr><td>Asavari Mungikar</td><td>+91 77983 33776</td><td>Economics</td></tr>
+        <tr><td>Shilpa Sakpal</td><td>+91 84590 21756</td><td>Information Technology</td></tr>
+        <tr><td>suresh pendey</td><td>No data found</td></td><td>Physics</td></tr>
+        <tr><td>Priti Tekawade</td><td>No Data Found</td><td>Chemistry</td></tr>
+        <tr><td>Aniruddh Jagdale</td><td>+91 70575 62600</td><td>Mathematics</td></tr>
+        <tr><td>Ariti Baygar</td><td>No Data Found</td><td>History, Geography</td></tr>
+        <tr><td>Tejashri Kadu</td><td>No Data Found</td><td>Marathi</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="books">
+    <div class="card">
+      <h2>📚 Subjects</h2>
+      <div class="subjects">
+        <a class="subject-item" href="https://drive.google.com/file/d/1grONVcxovtksqdo2RRRjzKAHDO0sl3Ie/view" target="_blank">Hindi</a>
+        <a class="subject-item" href="https://drive.google.com/file/d/1gz9p_dSL75CvSFmeHnOIinqh8Z6JXjFb/view" target="_blank">Marathi</a>
+        <a class="subject-item" href="https://drive.google.com/file/d/1iREp9B_qQO2ZFSwEgJesXKf47msOF8X4/view" target="_blank">Maths</a>
+        <a class="subject-item" href="#">English</a>
+        <a class="subject-item" href="https://drive.google.com/file/d/1ib5mqI-ccFSxkWwmYzrqPb1qLMiYrYra/view" target="_blank">Physics</a>
+        <a class="subject-item" href="#">Chemistry</a>
+        <a class="subject-item" href="https://drive.google.com/file/d/1iRO32BjNMMSWpVog-zeNvhJb_huLWyPN/view" target="_blank">Biology</a>
+        <a class="subject-item" href="#">History</a>
+        <a class="subject-item" href="https://drive.google.com/file/d/1iRaTKlrHw7LyQB-z5u0AxN8VooYZYBpp/view" target="_blank">Economics</a>
+        <a class="subject-item" href="#">NCC</a>
+        <a class="subject-item" href="#">Computer</a>
+        <a class="subject-item" href="#">Civics</a>
+        <a class="subject-item" href="#">Geography</a>
+        <a class="subject-item" href="#">Sanskrit</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="testpapers">
+    <div class="card">
+      <h2>📄 Test Papers</h2>
+      <div class="subjects">
+        <a class="subject-item" href="https://drive.google.com/file/d/1i7Ekw1LV-umrrfbMWtBFVusW297g3eH2/view" target="_blank">Science</a>
+        <a class="subject-item" href="https://drive.google.com/file/d/1i44EZ2boyz3OIJU5rFyI_0b6U7ILQo_z/view" target="_blank">SST</a>
+        <a class="subject-item" href="https://drive.google.com/file/d/1i3RW_pKBjYinCcpkjOGNoWk2Shs2nt5f/view" target="_blank">Maths</a>
+        <a class="subject-item" href="no data available" target="_blank">English</a>
+        <a class="subject-item" href="No data available" target="_blank">Hindi</a>
+        <a class="subject-item" href="No data Available" target="_blank">marathi</a>
+        
+      </div>
+      <p>📥 Tap on a subject to view or download the test paper.</p>
+    </div>
+  </section>
+
+  <section id="bus">
+    <div class="card">
+      <h2>🚌 Bus Tracking App</h2>
+      <p>Track your bus with our parent app.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.satcop.satcopparent" target="_blank" class="link-button">Open Bus App</a>
+    </div>
+  </section>
+
+  <section id="uniform">
+    <div class="card">
+      <h2>👕 Uniform Schedule</h2>
+      <table>
+        <tr><th>Weekday</th><th>Uniform</th></tr>
+        <tr><td>Monday</td><td>School Uniform</td></tr>
+        <tr><td>Tuesday</td><td>House Uniform</td></tr>
+        <tr><td>Wednesday</td><td>MCF/NCC Uniform</td></tr>
+        <tr><td>Thursday</td><td>School Uniform</td></tr>
+        <tr><td>Friday</td><td>School Uniform</td></tr>
+        <tr><td>Saturday</td><td>House Uniform</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="entab">
+    <div class="card">
+      <h2>📱 ENTAB School App</h2>
+      <p><strong>School Code:</strong> <code>EMPROS</code></p>
+      <a href="https://play.google.com/store/apps/details?id=com.entab.learninglab" target="_blank" class="link-button">Open ENTAB App</a>
+    </div>
+  </section>
+
+  <section id="members">
+    <div class="card">
+      <h2>👥 Community Members</h2>
+      <ul>
+        <li>👑 Kartik</li>
+        <li>🔥 Malhar</li>
+        <li>⚡ Rohan</li>
+        <li>✅ ranveer</li>
+        <li>✅ Soham</li>
+        <li>✅ Ansh</li>
+        <li>✅ Rudransh</li>
+        <li>✅ Mithilesh</li>
+        <li>✅ Rishikesh </li>
+        <li>✅ Atharva </li>
+        <li>✅ Chinmay</li>
+        <li>✅ parth </li>
+        <li>✅ Amrit</li>
+        <li>✅ kunal </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="call">
+    <div class="card">
+      <h2>📞 Group Call</h2>
+      <p>Start a video/audio group call. No login required.</p>
+      <iframe
+        src="https://meet.jit.si/CommunityGroup123"
+        allow="camera; microphone; fullscreen; display-capture"
+        style="width: 100%; height: 500px; border: 0; border-radius: 10px;">
+      </iframe>
+    </div>
+  </section>
+
+  <section id="idcard">
+    <div class="card">
+      <h2>🪪 ID Card</h2>
+      <p><strong>Note:</strong> This will only work in a limited time because this website has some time limits.</p>
+      <p>
+        <a href="https://kart-studio.vercel.app/" target="_blank" class="link-button">Open Dedicated App</a>
+      </p>
+      <h3>Steps to Apply 👇</h3>
+      <ol>
+        <li><strong>Enter OTRN Number:</strong> Enter the OTRN number provided in your ward's diary.</li>
+        <li><strong>Fill in Details:</strong> Complete all necessary details in the app.</li>
+        <li><strong>Upload Photo:</strong> Upload a photo of your child in regular white uniform with white background. House dress or any other photos are not permitted.</li>
+        <li><strong>Check Details:</strong> Ensure all details are accurate before submitting. Once submitted, the information cannot be edited. Class teacher will provide the number.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="events">
+    <div class="card">
+      <h2>📅 Events</h2>
+      <p>Hindi Diwas on 15/sep/2025 coming soon</p>
+    </div>
+  </section>
+
+  <!-- ✅ NEW MOVIES SECTION -->
+  <section id="movies">
+    <div class="card">
+      <h2>🎬 Movies</h2>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+        <iframe src="https://geo.dailymotion.com/player.html?video=x9ohtoq"
+          style="width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border:none;"
+          allowfullscreen
+          title="Dailymotion Video Player"
+          allow="web-share">
+        </iframe>
+      </div>
+    </div>
+  </section>
+  <!-- ✅ END MOVIES -->
+
+  <!-- 🔹 WhatsApp Floating Button -->
+  <a class="whatsapp-float" href="https://wa.me/919324961255" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA Icon">
+    Customer Care
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
